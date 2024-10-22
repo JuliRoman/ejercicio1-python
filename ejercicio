@@ -1,1 +1,30 @@
+def AumentarListaPrecios(ListaPrecios):
+    for Producto, Precio in ListaPrecios.items():
+        NuevoPrecio = Precio + (Precio * 0.15)
+        ListaPrecios[Producto] = NuevoPrecio
 
+    return ListaPrecios
+
+def main():
+    ListaPrecios = {}
+    Producto = input("Ingrese el nombre del producto: ")
+
+    while Producto != "":
+        Precio = float(input("Ingrese el precio del producto: "))
+        ListaPrecios[Producto] = Precio
+        Producto = input("Ingrese el nombre del producto (o presione Enter para finalizar): ")
+
+    ListaActualizada = AumentarListaPrecios(ListaPrecios)
+    Precios = list(ListaActualizada.values())
+    ItemCaro = max(Precios)
+
+    print("Lista de precios actualizada:")
+    for Producto, Precio in ListaActualizada.items():
+        print("{}: ${}".format(Producto, Precio))
+
+    ItemsMasCaros = [Producto for Producto, Precio in ListaActualizada.items() if Precio == ItemCaro]
+
+    print("El ítem más caro es: {} con un precio de ${}".format("".join(ItemsMasCaros),ItemCaro))
+
+if __name__ == "__main__":
+    main()
