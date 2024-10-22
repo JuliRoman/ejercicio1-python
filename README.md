@@ -1,2 +1,3 @@
 # ejercicio1-python
-Este código es de un ejercicio que seleccione de la guía de Tp que me dieron en la materia Programación I
+Este programa en Python permite al usuario ingresar una lista de productos y sus precios. Luego, se aplica un aumento del 15% a cada precio y se muestra el resultado.
+
